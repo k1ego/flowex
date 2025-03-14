@@ -8,6 +8,7 @@ import { IS_DEV_ENV } from '../shared/utils/is-dev.utils'
 import { getGraphQLConfig } from './config/graphgl.config'
 import { PrismaModule } from './prisma/prisma.module'
 import { RedisModule } from './redis/redis.module';
+import { AccountModule } from '../modules/auth/account/account.module'
 
 @Module({
 	imports: [
@@ -22,7 +23,8 @@ import { RedisModule } from './redis/redis.module';
       inject: [ConfigService]
 		}),
 		PrismaModule,
-		RedisModule
+		RedisModule,
+		AccountModule
 	]
 })
 export class CoreModule {}
