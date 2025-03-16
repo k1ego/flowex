@@ -49,6 +49,7 @@ export class SessionService {
 		return new Promise((resolve, reject) => {
 			req.session.createdAt = new Date()
 			req.session.userId = user.id
+			console.log('Session before save:', req.session)
 			req.session.save(err => {
 				if (err) {
 					return reject(
